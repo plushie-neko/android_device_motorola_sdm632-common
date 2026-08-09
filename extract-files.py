@@ -139,8 +139,7 @@ lib_fixups: lib_fixups_user_type = {
     (
         'libmm-omxcore',
         'libc2dcolorconvert',
-        'libkeymasterdeviceutils',
-        'libkeymasterprovision',
+
     ): lib_fixup_remove,
 }
 

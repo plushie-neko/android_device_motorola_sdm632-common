@@ -318,7 +318,7 @@ vendor/firmware/FT8006U_Pramboot.bin
 ## are from meizu/river_retail/river:10/QPUS30.52-33-11/df129:user/release-keys
 
 # Current blobs with ELF checks disabled:
-# android.hardware.gatekeeper@1.0-impl-qti, libkeymasterdeviceutils, libkeymasterprovision, libkeymasterutils, libqtikeymaster4, these libraries have a circular dependency on libkeymasterdeviceutils (TODO)
+# these libraries have a circular dependency on libkeymasterdeviceutils (TODO)
 # libGLESv1_CM_adreno, lib-imsSDP, libOmxVpp, vendor.qti.gnss@3.0-impl, liblocationservice are unable to resolved the following symbol: __aeabi_ldivmod (32-bit)
 # libOmxVpp depends on libmm-omxcore, which is a gnu makefile target
 # libfastcvopt depends on __exidx_end, __exidx_start
@@ -544,11 +544,6 @@ vendor/lib/vendor.qti.hardware.fm@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so;MODULE_SUFFIX=_vendor
 
-# Gatekeeper
-vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
-vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
-vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so;DISABLE_CHECKELF
-
 # GPS
 vendor/bin/garden_app
 vendor/bin/loc_launcher
@@ -672,13 +667,7 @@ vendor/firmware/a530v3_gpmu.fw2
 vendor/firmware/a530v3_seq.fw2
 vendor/firmware/a540_gpmu.fw2
 
-# Keymaster
-vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
-vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc
-vendor/lib64/libkeymasterdeviceutils.so;DISABLE_CHECKELF
-vendor/lib64/libkeymasterprovision.so;DISABLE_CHECKELF
-vendor/lib64/libkeymasterutils.so;DISABLE_CHECKELF
-vendor/lib64/libqtikeymaster4.so;DISABLE_CHECKELF
+
 
 # Listen
 vendor/lib/libgcs-calwrapper.so
