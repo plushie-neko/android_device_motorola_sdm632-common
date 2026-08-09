@@ -9,14 +9,14 @@
 # libmot_gpu_mapper depends on libc2dcolorconvert, which is a gnu makefile target
 
 # Audio (Prebuilt Audio HAL)
-vendor/lib/hw/audio.primary.msm8953.so:vendor/lib/hw/audio.primary.msm8953-moto.so;FIX_SONAME;DISABLE_CHECKELF
+vendor/lib/hw/audio.primary.msm8953.so;DISABLE_CHECKELF
 vendor/lib/libadm.so;DISABLE_CHECKELF
 vendor/lib/libmotaudioutils.so
 vendor/lib/libsensorndkbridge.so;DISABLE_CHECKELF
 vendor/lib/libtinycompress_vendor.so;DISABLE_CHECKELF
 vendor/lib/soundfx/libmmieffectswrapper.so
 vendor/lib/soundfx/libspeakerbundle.so
-vendor/lib/vndk/libtinyalsa.so:vendor/lib/libtinyalsa-moto.so;FIX_SONAME
+vendor/lib/vndk/libtinyalsa.so
 
 # Audio - ACDB
 vendor/etc/acdbdata/common/Bluetooth_cal.acdb
@@ -372,9 +372,7 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 
 # Camera - MotCamera2
 product/etc/permissions/privapp-permissions-com.meizu.camera2.xml
-system/app/MotoSignatureApp/MotoSignatureApp.apk;PRESIGNED
-system/etc/permissions/com.meizu.motosignature.xml:vendor/etc/permissions/com.meizu.motosignature.xml
-system/framework/com.meizu.motosignature.jar:vendor/framework/com.meizu.motosignature.jar
+
 
 # CNE
 product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml:system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
@@ -692,10 +690,7 @@ vendor/lib64/libgpustats.so
 vendor/lib64/libmmosal_proprietary.so
 vendor/lib64/libvpplibrary.so
 
-# Moto Permissions
-product/etc/permissions/com.meizu.camera2.denali.xml:vendor/etc/permissions/com.meizu.camera2.denali.xml
-product/etc/permissions/com.meizu.moto-uirefresh.xml
-product/etc/permissions/com.meizu.motodisplay.xml
+
 
 # Offmode charging
 vendor/bin/hvdcp_opti

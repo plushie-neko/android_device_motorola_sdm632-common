@@ -4,7 +4,7 @@ use.voice.path.for.pcm.voip=false
 # Media
 media.stagefright.thumbnail.prefer_hw_codecs=true
 
-# Moto
+# Meizu
 ro.mot.build.customerid=retail
 
 # Radio

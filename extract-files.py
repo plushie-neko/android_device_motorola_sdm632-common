@@ -44,15 +44,12 @@ lib_fixups: lib_fixups_user_type = {
 blob_fixups: blob_fixups_user_type = {
     'vendor/bin/charge_only_mode': blob_fixup()
         .add_needed('libmemset_shim.so'),
-    'vendor/lib/hw/audio.primary.msm8953-moto.so': blob_fixup()
-        .replace_needed('libtinyalsa.so', 'libtinyalsa-moto.so'),
+    
     ('vendor/lib/sensors.ssc.so', 'vendor/lib64/sensors.ssc.so'): blob_fixup()
         .replace_needed('libutils.so', 'libutils-v32.so'),
     'vendor/lib/soundfx/libmmieffectswrapper.so': blob_fixup()
-        .replace_needed('libtinyalsa.so', 'libtinyalsa-moto.so'),
     'vendor/lib/soundfx/libspeakerbundle.so': blob_fixup()
         .replace_needed('libutils.so', 'libutils-v32.so')
-        .replace_needed('libtinyalsa.so', 'libtinyalsa-moto.so'),
     'vendor/lib/libmot_gpu_mapper.so': blob_fixup()
         .add_needed('libgui_shim_vendor.so'),
     'vendor/lib/libmmcamera2_pproc_modules.so': blob_fixup()
@@ -163,10 +160,7 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libgui_shim.so'),
     'vendor/bin/pm-service': blob_fixup()
         .add_needed('libutils-v33.so'),
-    'vendor/etc/permissions/com.meizu.motosignature.xml': blob_fixup()
-        .regex_replace('system', 'vendor'),
-    ('vendor/lib/sensors.rp.so', 'vendor/lib64/sensors.rp.so'): blob_fixup()
-        .replace_needed('libutils.so', 'libutils-v32.so'),
+    
     'vendor/lib64/libmotext_inf.so': blob_fixup()
         .remove_needed('libril.so'),
     'vendor/lib64/libril-qc-hal-qmi.so': blob_fixup()

@@ -1,1 +1,1 @@
-allow sensors moto_boot_prop:file { getattr open read };
+allow sensors meizu_boot_prop:file { getattr open read };

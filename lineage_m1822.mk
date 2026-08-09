@@ -9,7 +9,7 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 PRODUCT_BRAND := meizu
 PRODUCT_DEVICE := m1822
 PRODUCT_MANUFACTURER := meizu
-PRODUCT_MODEL := moto g(7) power
+PRODUCT_MODEL := m1822
 PRODUCT_NAME := lineage_m1822
 
 PRODUCT_BUILD_PROP_OVERRIDES += \

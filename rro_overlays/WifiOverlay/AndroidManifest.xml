@@ -10,9 +10,9 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<!-- Motorola SDM632 specific wifi overlays -->
+<!-- Meizu m1822 specific wifi overlays -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.wifi.resources.meizu_sdm632"
+    package="com.android.wifi.resources.m1822"
     android:versionCode="1"
     android:versionName="1.0">
     <application android:hasCode="false" />

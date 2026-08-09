@@ -91,7 +91,7 @@ PRODUCT_PACKAGES += \
     disable_configstore
 
 # Dexpreopt
-$(call add-product-dex-preopt-module-config,MotoSignatureApp,disable)
+
 
 # Display
 PRODUCT_PACKAGES += \
@@ -210,10 +210,7 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
-# MotoActions
-PRODUCT_PACKAGES += \
-    MotoActions \
-    MotoCommonOverlay
+
 
 # Native Libraries
 PRODUCT_COPY_FILES += \
