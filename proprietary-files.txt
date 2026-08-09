@@ -297,8 +297,6 @@ vendor/firmware/leia_pm4_470.fw
 # MotCamera2
 product/priv-app/MotCamera2/MotCamera2.apk
 
-# NFC Firmware
-vendor/firmware/st21nfc_fw.bin
 
 # Proximity Sensor Firmware
 vendor/firmware/AbovCapSense.BIN
