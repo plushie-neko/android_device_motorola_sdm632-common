@@ -1,2 +1,18 @@
 soong_namespace {
 }
+
+# Merged from common
+//
+// Copyright (C) 2022-2024 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+soong_namespace {
+}
+
+install_symlink {
+    name: "dsp_symlink",
+    vendor: true,
+    installed_location: "lib/dsp",
+    symlink_target: "/vendor/dsp",
+}

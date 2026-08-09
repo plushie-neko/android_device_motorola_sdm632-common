@@ -1,6 +1,18 @@
 [
  {
-   "repository": "android_device_motorola_sdm632-common",
-   "target_path": "device/motorola/sdm632-common"
+   "repository": "android_device_meizu_m1822",
+   "target_path": "device/meizu/m1822"
  }
+]
+
+# Merged from common
+[
+  {
+    "repository": "android_kernel_meizu_sdm632",
+    "target_path": "kernel/meizu/sdm632"
+  },
+  {
+    "repository": "android_hardware_meizu",
+    "target_path": "hardware/meizu"
+  }
 ]
