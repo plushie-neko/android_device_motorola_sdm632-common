@@ -8,6 +8,7 @@ service capsense_reset /system/vendor/bin/capsense_reset
    user system
    group system input
    disabled
+   oneshot
 
 on property:sys.boot_completed=1
     start capsense_reset
@@ -47,3 +48,17 @@ on boot
    chmod 0660 /sys/class/leds/vibrator/seq
    chown system system /sys/class/leds/vibrator/extra
    chmod 0660 /sys/class/leds/vibrator/extra
+
+on post-fs-data
+    # Fix the storage layout for Android 15 compatibility on Android 8.1 bootloader.
+    # We remove the incorrect legacy symlink /data/user/0 pointing to /data/data.
+    rm /data/user/0
+    rmdir /data/data
+    mkdir /data/user 0771 system system
+    mkdir /data/user/0 0771 system system
+    # We remove any legacy /data/data symlink/directory and create /data/data as a directory.
+    rm /data/data
+    rmdir /data/data
+    mkdir /data/data 0771 system system
+    # Bind mount /data/data to /data/user/0 to satisfy both vold and Zygote while avoiding EXDEV errors.
+    mount none /data/data /data/user/0 bind
