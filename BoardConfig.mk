@@ -120,7 +120,7 @@ BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom ehci-hcd.park=3 lpm_levels.sle
 BOARD_KERNEL_CMDLINE += androidboot.bootdevice=7824900.sdhci androidboot.usbconfigfs=true
 BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.boot_devices=soc/7824900.sdhci
 BOARD_KERNEL_CMDLINE += androidboot.veritymode=eio
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_KERNEL_PAGESIZE := 2048
