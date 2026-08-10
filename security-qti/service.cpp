@@ -10,7 +10,7 @@ QSEECom_handle* cmnlib_handle = nullptr;
 
 int main() {
     android::base::InitLogging(nullptr, android::base::LogdLogger(android::base::SYSTEM));
-    ABinderProcess_setThreadPoolMaxThreadCount(2);
+    ABinderProcess_setThreadPoolMaxThreadCount(8);
     
     if (!QseeComWrapper::init()) {
         LOG(FATAL) << "Failed to init QSEEComWrapper";
