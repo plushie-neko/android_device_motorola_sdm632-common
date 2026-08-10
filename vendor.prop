@@ -123,7 +123,7 @@ ro.hardware.vulkan=msm8953
 vendor.display.disable_scaler=1
 
 # Factory reset partition
-ro.frp.pst=/dev/block/platform/soc/7824900.sdhci/by-name/frp
+ro.frp.pst=/dev/block/bootdevice/by-name/config
 
 # FM
 ro.vendor.fm.use_audio_session=true
