@@ -16,6 +16,9 @@
 
 DEVICE_PATH := device/meizu/m1822
 
+# OTA
+AB_OTA_UPDATER := false
+
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := msm8953
