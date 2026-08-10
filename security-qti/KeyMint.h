@@ -37,6 +37,18 @@ public:
                              const std::optional<HardwareAuthToken>& authToken,
                              BeginResult* result) override;
     ndk::ScopedAStatus deviceLocked(bool passwordOnly,
-                                    const std::optional<TimeStampToken>& timestampToken) override;
+                                    const std::optional<::aidl::android::hardware::security::secureclock::TimeStampToken>& timestampToken) override;
     ndk::ScopedAStatus earlyBootEnded() override;
+    
+    ndk::ScopedAStatus convertStorageKeyToEphemeral(const std::vector<uint8_t>& storageKeyBlob,
+                                                    std::vector<uint8_t>* ephemeralKeyBlob) override;
+    ndk::ScopedAStatus getKeyCharacteristics(const std::vector<uint8_t>& keyBlob,
+                                             const std::vector<uint8_t>& appId,
+                                             const std::vector<uint8_t>& appData,
+                                             std::vector<KeyCharacteristics>* keyCharacteristics) override;
+    ndk::ScopedAStatus getRootOfTrustChallenge(std::array<uint8_t, 16>* challenge) override;
+    ndk::ScopedAStatus getRootOfTrust(const std::array<uint8_t, 16>& challenge,
+                                      std::vector<uint8_t>* rootOfTrust) override;
+    ndk::ScopedAStatus sendRootOfTrust(const std::vector<uint8_t>& rootOfTrust) override;
+    ndk::ScopedAStatus setAdditionalAttestationInfo(const std::vector<KeyParameter>& info) override;
 };

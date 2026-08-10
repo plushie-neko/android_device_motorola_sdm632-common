@@ -33,12 +33,10 @@ ndk::ScopedAStatus Gatekeeper::verify(
     qti_gk_resp* resp = reinterpret_cast<qti_gk_resp*>(resp_buf);
     
     if (ret != 0 || resp->status != 0) {
-        _aidl_return->responseCode = GatekeeperVerifyResponse::ERROR_RETRY_TIMEOUT; // Or ERROR_RETRY_TIMEOUT with timeout
-        return ndk::ScopedAStatus::ok();
+        return ndk::ScopedAStatus::fromServiceSpecificError(IGatekeeper::ERROR_RETRY_TIMEOUT);
     }
 
-    _aidl_return->responseCode = GatekeeperVerifyResponse::STATUS_OK;
-    _aidl_return->hardwareAuthToken.assign(
+    _aidl_return->hardwareAuthToken.mac.assign(
         resp_buf + resp->payload_offset,
         resp_buf + resp->payload_offset + resp->payload_length
     );
@@ -85,11 +83,9 @@ ndk::ScopedAStatus Gatekeeper::enroll(
     qti_gk_resp* resp = reinterpret_cast<qti_gk_resp*>(resp_buf);
     
     if (ret != 0 || resp->status != 0) {
-        _aidl_return->responseCode = GatekeeperEnrollResponse::ERROR_RETRY_TIMEOUT; 
-        return ndk::ScopedAStatus::ok();
+        return ndk::ScopedAStatus::fromServiceSpecificError(IGatekeeper::ERROR_RETRY_TIMEOUT);
     }
 
-    _aidl_return->responseCode = GatekeeperEnrollResponse::STATUS_OK;
     _aidl_return->data.assign(
         resp_buf + resp->payload_offset,
         resp_buf + resp->payload_offset + resp->payload_length
