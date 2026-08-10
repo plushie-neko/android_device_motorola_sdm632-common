@@ -39,7 +39,7 @@ ndk::ScopedAStatus KeyMint::generateKey(const std::vector<KeyParameter>& keyPara
     int ret = QseeComWrapper::send_cmd(mHandle, req_buf, req_size, resp_buf, resp_size);
 
     if (ret != 0) {
-        return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(ErrorCode::)UNKNOWN_ERROR);
+        return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(ErrorCode::UNKNOWN_ERROR));
     }
 
     keymaster::GenerateKeyResponse resp(keymaster::kDefaultMessageVersion);
@@ -61,7 +61,7 @@ ndk::ScopedAStatus KeyMint::importKey(const std::vector<KeyParameter>& keyParams
                              KeyFormat keyFormat, const std::vector<uint8_t>& keyData,
                              const std::optional<AttestationKey>& attestationKey,
                              KeyCreationResult* creationResult) {
-    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(ErrorCode::)UNIMPLEMENTED);
+    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(ErrorCode::UNIMPLEMENTED));
 }
 
 ndk::ScopedAStatus KeyMint::importWrappedKey(const std::vector<uint8_t>& wrappedKeyData,
@@ -70,13 +70,13 @@ ndk::ScopedAStatus KeyMint::importWrappedKey(const std::vector<uint8_t>& wrapped
                                     const std::vector<KeyParameter>& unwrappingParams,
                                     int64_t passwordSid, int64_t biometricSid,
                                     KeyCreationResult* creationResult) {
-    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(ErrorCode::)UNIMPLEMENTED);
+    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(ErrorCode::UNIMPLEMENTED));
 }
 
 ndk::ScopedAStatus KeyMint::upgradeKey(const std::vector<uint8_t>& keyBlobToUpgrade,
                               const std::vector<KeyParameter>& upgradeParams,
                               std::vector<uint8_t>* upgradedKeyBlob) {
-    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(ErrorCode::)UNIMPLEMENTED);
+    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(ErrorCode::UNIMPLEMENTED));
 }
 
 ndk::ScopedAStatus KeyMint::deleteKey(const std::vector<uint8_t>& keyBlob) {
@@ -88,7 +88,7 @@ ndk::ScopedAStatus KeyMint::deleteAllKeys() {
 }
 
 ndk::ScopedAStatus KeyMint::destroyAttestationIds() {
-    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(ErrorCode::)UNIMPLEMENTED);
+    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(ErrorCode::UNIMPLEMENTED));
 }
 
 ndk::ScopedAStatus KeyMint::begin(KeyPurpose purpose, const std::vector<uint8_t>& keyBlob,
@@ -114,7 +114,7 @@ ndk::ScopedAStatus KeyMint::begin(KeyPurpose purpose, const std::vector<uint8_t>
     int ret = QseeComWrapper::send_cmd(mHandle, req_buf, req_size, resp_buf, resp_size);
 
     if (ret != 0) {
-        return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(ErrorCode::)UNKNOWN_ERROR);
+        return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(ErrorCode::UNKNOWN_ERROR));
     }
 
     keymaster::BeginOperationResponse resp(keymaster::kDefaultMessageVersion);
@@ -143,29 +143,29 @@ ndk::ScopedAStatus KeyMint::earlyBootEnded() {
 
 ndk::ScopedAStatus KeyMint::convertStorageKeyToEphemeral(const std::vector<uint8_t>& storageKeyBlob,
                                                 std::vector<uint8_t>* ephemeralKeyBlob) {
-    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(static_cast<int32_t>(ErrorCode::)UNIMPLEMENTED));
+    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(static_cast<int32_t>(ErrorCode::UNIMPLEMENTED)));
 }
 
 ndk::ScopedAStatus KeyMint::getKeyCharacteristics(const std::vector<uint8_t>& keyBlob,
                                          const std::vector<uint8_t>& appId,
                                          const std::vector<uint8_t>& appData,
                                          std::vector<KeyCharacteristics>* keyCharacteristics) {
-    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(static_cast<int32_t>(ErrorCode::)UNIMPLEMENTED));
+    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(static_cast<int32_t>(ErrorCode::UNIMPLEMENTED)));
 }
 
 ndk::ScopedAStatus KeyMint::getRootOfTrustChallenge(std::array<uint8_t, 16>* challenge) {
-    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(static_cast<int32_t>(ErrorCode::)UNIMPLEMENTED));
+    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(static_cast<int32_t>(ErrorCode::UNIMPLEMENTED)));
 }
 
 ndk::ScopedAStatus KeyMint::getRootOfTrust(const std::array<uint8_t, 16>& challenge,
                                   std::vector<uint8_t>* rootOfTrust) {
-    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(static_cast<int32_t>(ErrorCode::)UNIMPLEMENTED));
+    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(static_cast<int32_t>(ErrorCode::UNIMPLEMENTED)));
 }
 
 ndk::ScopedAStatus KeyMint::sendRootOfTrust(const std::vector<uint8_t>& rootOfTrust) {
-    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(static_cast<int32_t>(ErrorCode::)UNIMPLEMENTED));
+    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(static_cast<int32_t>(ErrorCode::UNIMPLEMENTED)));
 }
 
 ndk::ScopedAStatus KeyMint::setAdditionalAttestationInfo(const std::vector<KeyParameter>& info) {
-    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(static_cast<int32_t>(ErrorCode::)UNIMPLEMENTED));
+    return ndk::ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(static_cast<int32_t>(ErrorCode::UNIMPLEMENTED)));
 }
