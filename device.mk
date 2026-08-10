@@ -295,8 +295,8 @@ PRODUCT_PACKAGES += \
 TARGET_RECOVERY_DENSITY := xhdpi
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/root/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
-    $(LOCAL_PATH)/recovery/root/init.recovery.qcom.usb.rc:root/init.recovery.qcom.usb.rc
+    $(LOCAL_PATH)/recovery/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
+    $(LOCAL_PATH)/recovery/init.recovery.qcom.usb.rc:root/init.recovery.qcom.usb.rc
 
 # RFS
 PRODUCT_PACKAGES += \
