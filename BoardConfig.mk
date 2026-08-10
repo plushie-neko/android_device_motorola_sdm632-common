@@ -119,6 +119,7 @@ TARGET_FS_CONFIG_GEN += \
 BOARD_BOOT_HEADER_VERSION := 0
 BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_KERNEL_BASE := 0x80000000
+BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 msm_rtb.filter=0x237 earlycon=msm_serial_dm,0x78af000
 BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom ehci-hcd.park=3 lpm_levels.sleep_disabled=1
 BOARD_KERNEL_CMDLINE += androidboot.bootdevice=7824900.sdhci androidboot.usbconfigfs=true
 BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.boot_devices=soc/7824900.sdhci
@@ -128,7 +129,8 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DTBO := true
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION) --second_offset 0x00f00000
+BOARD_RAMDISK_USE_LZ4 := false
 TARGET_KERNEL_CONFIG := m1822_defconfig
 TARGET_KERNEL_SOURCE := kernel/meizu/sdm632
 TARGET_KERNEL_VERSION := 4.9
