@@ -161,7 +161,6 @@ PRODUCT_PACKAGES += \
     fstab.qcom.ramdisk \
     init.class_main.sh \
     init.hidl.sensor.rc \
-    init.m1822.rc \
     init.mmi.chipset.rc \
     init.mmi.overlay.rc \
     init.mmi.rc \
@@ -233,7 +232,6 @@ PRODUCT_PACKAGES += \
     vendor_bt_firmware_mountpoint \
     vendor_dsp_mountpoint \
     vendor_firmware_mnt_mountpoint \
-    vendor_fsg_mountpoint
 
 # Perf
 PRODUCT_COPY_FILES += \
@@ -302,7 +300,6 @@ PRODUCT_COPY_FILES += \
 
 # RFS
 PRODUCT_PACKAGES += \
-    rfs_msm_mpss_readonly_vendor_fsg_symlink
 
 # Seccomp
 PRODUCT_COPY_FILES += \
