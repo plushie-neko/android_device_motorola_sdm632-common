@@ -113,7 +113,7 @@ TARGET_FS_CONFIG_GEN += \
     $(DEVICE_PATH)/mot_aids.fs
 
 # Kernel
-BOARD_BOOT_HEADER_VERSION := 1
+BOARD_BOOT_HEADER_VERSION := 0
 BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom ehci-hcd.park=3 lpm_levels.sleep_disabled=1
@@ -135,7 +135,6 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # Media
 TARGET_USES_ION := true
-
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864

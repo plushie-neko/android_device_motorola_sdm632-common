@@ -12,7 +12,9 @@ PRODUCT_MANUFACTURER := meizu
 PRODUCT_MODEL := m1822
 PRODUCT_NAME := lineage_m1822
 
+PRODUCT_GMS_CLIENTID_BASE := android-meizu
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="m1822-user 10 QPOS30.52-29-12 401fd release-keys" \
-    BuildFingerprint=meizu/m1822/m1822:10/QPOS30.52-29-12/401fd:user/release-keys \
+    BuildDesc="meizu_M1822_CN-user 8.1.0 OPM1.171019.026 1587639120 release-keys"
+    BuildFingerprint="Meizu/meizu_M1822_CN/M1822:8.1.0/OPM1.171019.026/1587639120:user/release-keys"
     DeviceName=m1822

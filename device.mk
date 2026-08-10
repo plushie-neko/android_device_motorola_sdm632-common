@@ -22,7 +22,6 @@ $(call inherit-product, hardware/qcom-caf/common/common.mk)
 $(call inherit-product, vendor/meizu/m1822/m1822-vendor.mk)
 
 # Product properties and features
-PRODUCT_GMS_CLIENTID_BASE := android-meizu
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := true
 PRODUCT_SHIPPING_API_LEVEL := 27
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
