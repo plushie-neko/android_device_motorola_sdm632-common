@@ -9,4 +9,9 @@
         <version>4</version>
         <fqname>IKeyMintDevice/default</fqname>
     </hal>
+    <hal format="aidl">
+        <name>android.hardware.security.sharedsecret</name>
+        <version>1</version>
+        <fqname>ISharedSecret/default</fqname>
+    </hal>
 </manifest>

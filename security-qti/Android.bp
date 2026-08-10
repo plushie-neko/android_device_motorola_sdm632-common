@@ -9,6 +9,7 @@ cc_binary {
         "QseeComWrapper.cpp",
         "Gatekeeper.cpp",
         "KeyMint.cpp",
+        "SharedSecret.cpp",
     ],
     shared_libs: [
         "libbase",

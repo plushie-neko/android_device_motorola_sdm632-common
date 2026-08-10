@@ -4,13 +4,13 @@
 #include "QseeComWrapper.h"
 #include "Gatekeeper.h"
 #include "KeyMint.h"
-
+#include "SharedSecret.h"
 QSEECom_handle* km_handle = nullptr;
 QSEECom_handle* cmnlib_handle = nullptr;
 
 int main() {
     android::base::InitLogging(nullptr, android::base::LogdLogger(android::base::SYSTEM));
-    ABinderProcess_setThreadPoolMaxThreadCount(0);
+    ABinderProcess_setThreadPoolMaxThreadCount(2);
     
     if (!QseeComWrapper::init()) {
         LOG(FATAL) << "Failed to init QSEEComWrapper";
@@ -48,6 +48,14 @@ int main() {
     status = AServiceManager_addService(kmService->asBinder().get(), kmName.c_str());
     if (status != STATUS_OK) {
         LOG(FATAL) << "Failed to register KeyMint HAL";
+    }
+
+    // Register SharedSecret AIDL
+    std::shared_ptr<SharedSecret> ssService = ndk::SharedRefBase::make<SharedSecret>();
+    const std::string ssName = std::string() + SharedSecret::descriptor + "/default";
+    status = AServiceManager_addService(ssService->asBinder().get(), ssName.c_str());
+    if (status != STATUS_OK) {
+        LOG(FATAL) << "Failed to register SharedSecret HAL";
     }
 
     LOG(INFO) << "Unified KeyMint + Gatekeeper Daemon is ready!";
