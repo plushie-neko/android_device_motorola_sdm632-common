@@ -177,7 +177,7 @@ persist.vendor.radio.sw_mbn_update=0
 persist.vendor.radio.start_ota_daemon=1
 persist.vendor.radio.jbims=1
 persist.vendor.radio.msgtunnel.start=true
-persist.vendor.radio.sar_sensor=1
+persist.vendor.radio.sar_sensor=0
 persist.vendor.radio.calls.on.ims=true
 persist.vendor.radio.fi_supported=1
 persist.vendor.cne.rat.wlan.chip.oem=WCN
@@ -265,3 +265,5 @@ ro.vendor.hw.dualsim=true
 persist.vendor.radio.multisim.config=dsds
 persist.radio.multisim.config=dsds
 
+# Crypto
+ro.crypto.state=unencrypted

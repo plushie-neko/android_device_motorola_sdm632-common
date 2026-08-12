@@ -625,6 +625,7 @@
 	<path name="speaker">
 		<ctl name="RX3 MIX1 INP1" value="RX1" />
 		<ctl name="SPK" value="Switch" />
+		<ctl name="TFA_CHIP_SELECTOR" value="0" />
 	</path>
 
 	<path name="vi-feedback">
@@ -644,6 +645,7 @@
 		<ctl name="RX1 Digital Volume" value="84" />
 		<ctl name="EAR PA Gain" value="POS_6_DB" />
 		<ctl name="EAR_S" value="Switch" />
+		<ctl name="TFA_CHIP_SELECTOR" value="3" />
 	</path>
 
 	<path name="handset-mic">

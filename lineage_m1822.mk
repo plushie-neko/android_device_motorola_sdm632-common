@@ -6,10 +6,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-PRODUCT_BRAND := meizu
+PRODUCT_BRAND := Meizu
 PRODUCT_DEVICE := m1822
-PRODUCT_MANUFACTURER := meizu
-PRODUCT_MODEL := m1822
+PRODUCT_MANUFACTURER := Meizu
+PRODUCT_MODEL := Meizu Note 8
 PRODUCT_NAME := lineage_m1822
 
 PRODUCT_GMS_CLIENTID_BASE := android-meizu

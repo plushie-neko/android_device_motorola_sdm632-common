@@ -299,3 +299,8 @@ on property:vendor.wifi.station=true
 on property:vendor.wifi.station=false
     write /sys/module/wlan/parameters/sar_sta disabled
 
+# Force start main/late_start classes on FBE/unencrypted post-fs-data completion
+on property:vold.post_fs_data_done=1
+    trigger nonencrypted
+
+
